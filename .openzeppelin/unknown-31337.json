@@ -1,0 +1,345 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "txHash": "0x26d7c15ab0fa6c2082a20e62176d623db5673b08018ea588cda690dfdf44aaf6"
+  },
+  "proxies": [
+    {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0xb328977d3aa5abdc18c67e608b7b10061edc386a7a45f40603797a51032bef8c",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "txHash": "0x400fd89573251dd6e2000d9c969504d5f0202d720539f0bdf4102c285972fb76",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "f98ecc0ef46dc1882c327c5c049d082607cbd423a1b13400152e6682c0e752cd": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "txHash": "0x34cfeae1e936526ddc03d6ce545214774e1048d5e03738bfe342eb46a9f75914",
+      "layout": {
+        "storage": [
+          {
+            "label": "initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:23"
+          },
+          {
+            "label": "initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:28"
+          },
+          {
+            "label": "______gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:63"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "MainContract",
+            "src": "contracts\\MainContract.sol:9"
+          },
+          {
+            "label": "_tokenAllocation",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_struct(tokenAllocationObj)121_storage))",
+            "contract": "MainContract",
+            "src": "contracts\\MainContract.sol:15"
+          },
+          {
+            "label": "_tokenDistribution",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_array(t_struct(tokenDistributionObj)126_storage)dyn_storage))",
+            "contract": "MainContract",
+            "src": "contracts\\MainContract.sol:16"
+          },
+          {
+            "label": "_tokenDistributionInfo",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_mapping(t_address,t_uint256)))",
+            "contract": "MainContract",
+            "src": "contracts\\MainContract.sol:17"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_struct(tokenDistributionObj)126_storage)dyn_storage": {
+            "label": "struct MainContract.tokenDistributionObj[]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_string_memory_ptr,t_array(t_struct(tokenDistributionObj)126_storage)dyn_storage)": {
+            "label": "mapping(string => struct MainContract.tokenDistributionObj[])"
+          },
+          "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(string => mapping(address => uint256))"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(tokenAllocationObj)121_storage)": {
+            "label": "mapping(string => struct MainContract.tokenAllocationObj)"
+          },
+          "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_array(t_struct(tokenDistributionObj)126_storage)dyn_storage))": {
+            "label": "mapping(uint256 => mapping(string => struct MainContract.tokenDistributionObj[]))"
+          },
+          "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_mapping(t_address,t_uint256)))": {
+            "label": "mapping(uint256 => mapping(string => mapping(address => uint256)))"
+          },
+          "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_struct(tokenAllocationObj)121_storage))": {
+            "label": "mapping(uint256 => mapping(string => struct MainContract.tokenAllocationObj))"
+          },
+          "t_string_memory_ptr": {
+            "label": "string"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_struct(tokenAllocationObj)121_storage": {
+            "label": "struct MainContract.tokenAllocationObj",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "calculateby",
+                "type": "t_string_storage"
+              }
+            ]
+          },
+          "t_struct(tokenDistributionObj)126_storage": {
+            "label": "struct MainContract.tokenDistributionObj",
+            "members": [
+              {
+                "label": "eoa",
+                "type": "t_address"
+              },
+              {
+                "label": "percentage",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    },
+    "62f155a5e84d13fba1da9db44f8a9e9f95133b75f8a39f06af07b083dd86883e": {
+      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "txHash": "0x68a4a17018fecf33c9624d99852a30d94f5a329c81f363c3573544678697291c",
+      "layout": {
+        "storage": [
+          {
+            "label": "initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:23"
+          },
+          {
+            "label": "initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:28"
+          },
+          {
+            "label": "______gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:63"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "VotingContract",
+            "src": "contracts\\VotingContract.sol:11"
+          },
+          {
+            "label": "threshold",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_uint256",
+            "contract": "VotingContract",
+            "src": "contracts\\VotingContract.sol:13"
+          },
+          {
+            "label": "mainContract",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_contract(MainContract)221",
+            "contract": "VotingContract",
+            "src": "contracts\\VotingContract.sol:15"
+          },
+          {
+            "label": "projectCount",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_uint256",
+            "contract": "VotingContract",
+            "src": "contracts\\VotingContract.sol:54"
+          },
+          {
+            "label": "projects",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_mapping(t_uint256,t_struct(ProjectCt)309_storage)",
+            "contract": "VotingContract",
+            "src": "contracts\\VotingContract.sol:55"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_contract(Aion)1049": {
+            "label": "contract Aion"
+          },
+          "t_contract(MainContract)221": {
+            "label": "contract MainContract"
+          },
+          "t_mapping(t_address,t_struct(Voter)270_storage)": {
+            "label": "mapping(address => struct VotingContract.Voter)"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)"
+          },
+          "t_mapping(t_uint256,t_struct(ProjectCt)309_storage)": {
+            "label": "mapping(uint256 => struct VotingContract.ProjectCt)"
+          },
+          "t_mapping(t_uint256,t_struct(Proposal)290_storage)": {
+            "label": "mapping(uint256 => struct VotingContract.Proposal)"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_struct(ProjectCt)309_storage": {
+            "label": "struct VotingContract.ProjectCt",
+            "members": [
+              {
+                "label": "owner",
+                "type": "t_address"
+              },
+              {
+                "label": "totalToken",
+                "type": "t_uint256"
+              },
+              {
+                "label": "totalPower",
+                "type": "t_uint256"
+              },
+              {
+                "label": "voters",
+                "type": "t_mapping(t_address,t_struct(Voter)270_storage)"
+              },
+              {
+                "label": "proposalCount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "proposals",
+                "type": "t_mapping(t_uint256,t_struct(Proposal)290_storage)"
+              }
+            ]
+          },
+          "t_struct(Proposal)290_storage": {
+            "label": "struct VotingContract.Proposal",
+            "members": [
+              {
+                "label": "owner",
+                "type": "t_address"
+              },
+              {
+                "label": "name",
+                "type": "t_string_storage"
+              },
+              {
+                "label": "forVoteCount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "againstVoteCount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "abstainVoteCount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256"
+              },
+              {
+                "label": "endTime",
+                "type": "t_uint256"
+              },
+              {
+                "label": "finished",
+                "type": "t_bool"
+              },
+              {
+                "label": "aion",
+                "type": "t_contract(Aion)1049"
+              }
+            ]
+          },
+          "t_struct(Voter)270_storage": {
+            "label": "struct VotingContract.Voter",
+            "members": [
+              {
+                "label": "power",
+                "type": "t_uint256"
+              },
+              {
+                "label": "voted",
+                "type": "t_mapping(t_uint256,t_bool)"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    }
+  }
+}

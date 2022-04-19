@@ -1,0 +1,50 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\THOMAS\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add hardhat
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\xampp\php;C:\Program Files\dotnet\;C:\composer;C:\Users\THOMAS\AppData\Local\Programs\Python\Python37;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\THOMAS\.local\share\solana\install\active_release\bin;C:\Ruby27-x64\bin;C:\Users\THOMAS\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\THOMAS\AppData\Local\Programs\Python\Python37\;C:\Users\THOMAS\anaconda3;C:\Users\THOMAS\anaconda3\Library\mingw-w64\bin;C:\Users\THOMAS\anaconda3\Library\usr\bin;C:\Users\THOMAS\anaconda3\Library\bin;C:\Users\THOMAS\anaconda3\Scripts;C:\Users\THOMAS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\Users\THOMAS\.dotnet\tools;C:\Users\THOMAS\AppData\Roaming\Composer\vendor\bin;C:\Users\THOMAS\AppData\Local\GitHubDesktop\bin;C:\Users\THOMAS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\THOMAS\AppData\Roaming\npm;C:\Program Files\heroku\bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\WORK\creabo-web3-rnd-smartcontract\node_modules\secp256k1\prebuilds\win32-x64\node.napi.node'
+
+npm manifest: 
+  {
+    "name": "hardhat",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@nomiclabs/hardhat-ethers": "^2.0.5",
+      "@nomiclabs/hardhat-waffle": "^2.0.3",
+      "@openzeppelin/hardhat-upgrades": "^1.16.1",
+      "chai": "^4.3.6",
+      "ethereum-waffle": "^3.4.0",
+      "ethers": "^5.6.1",
+      "hardhat": "^2.9.1"
+    },
+    "dependencies": {
+      "@openzeppelin/contracts": "^4.5.0",
+      "@openzeppelin/test-helpers": "^0.5.15"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
