@@ -8,32 +8,32 @@ describe("CreaboFund", function () {
   it("Should deploy", async function () {
     const signers = await ethers.getSigners();
     const signer = signers[0];
+    const admin = signers[1];
+    const admin2 = signers[2];
     console.log(signer.address);
 
     expect(signer).not.null;
     const CreaboFund = await ethers.getContractFactory("CreaboFund");
-    const CreaboFundContract = await CreaboFund.deploy();
+    const CreaboFundContract = await CreaboFund.deploy(admin.address);
     await CreaboFundContract.deployed();
 
     const lazyMinter = new LazyMinter({ contractAddress: CreaboFundContract.address, signer: signer });
-    const voucher = await lazyMinter.createVoucher(1, 10);
-
-    // console.log(['signature', signature]);
-    // let accounts = await web3.eth.getAccounts();
-    //   console.log(accounts)
-
-    // const myVoucher = {
-    //   ...voucher,
-    //   signature
-    // }
-
-    // address = ethers.utils.verifyMessage(digest, signature);
-    //   console.log(address);
+    const voucher = await lazyMinter.createVoucher(1, 5000);
 
     let transaction1 = await CreaboFundContract.deposit({ from: signer.address, value: 5000 });
-    // console.log(transaction1);
-    // let transaction2 = await atmContract.withdraw(5000, voucher, { from: minter.address });
-    let transaction2 = await CreaboFundContract.transferFund(signers[1].address, voucher, { from: signer.address });
+    let transaction2 = await CreaboFundContract.transferFund(admin.address, voucher);
+    
+    const adminSigner = new LazyMinter({ contractAddress: CreaboFundContract.address, signer: admin });
+    
+    const adminVoucher = await adminSigner.createVoucher(1, 2500);
+    let transaction3 = await CreaboFundContract.connect(admin).withdraw(adminVoucher);
+    let transaction4 = await CreaboFundContract.connect(admin).changeAdmin(admin2.address);
+
+    const admin2Signer = new LazyMinter({ contractAddress: CreaboFundContract.address, signer: admin2 });
+    const admin2Voucher = await admin2Signer.createVoucher(1, 2500);
+    let transaction5 = await CreaboFundContract.connect(admin2).withdraw(admin2Voucher);
+
+
     // console.log(transaction2);
 
     //   // const tx = new EthTx(signature, {chain: 'hardhat', hardfork: 'petersburg'})
