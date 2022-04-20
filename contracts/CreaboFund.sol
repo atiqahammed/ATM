@@ -12,8 +12,8 @@ contract CreaboFund is EIP712, AccessControl  {
     string private constant SIGNATURE_VERSION = "1";
 
     struct CREABOVoucher {
-        uint256 projectId;
-        uint256 amount;
+        uint projectId;
+        uint amount;
         bytes signature;
     }
 
@@ -32,7 +32,7 @@ contract CreaboFund is EIP712, AccessControl  {
     }
     function _hash(CREABOVoucher calldata voucher) internal view returns (bytes32) {
         return _hashTypedDataV4(keccak256(abi.encode(
-            keccak256("CREABOVoucher(uint256 projectId,uint256 amount)"),
+            keccak256("CREABOVoucher(uint projectId,uint amount)"),
             voucher.projectId,
             voucher.amount
         )));
@@ -51,12 +51,12 @@ contract CreaboFund is EIP712, AccessControl  {
         balances[msg.sender] -= amount;
     }
 
-    function transferFund(address receiver, uint amount, CREABOVoucher calldata voucher) public {
+    function transferFund(address receiver, CREABOVoucher calldata voucher) public {
         address signer = _verify(voucher);
         require(msg.sender == signer, "Signature invalid or unauthorized");
-        require(balances[msg.sender] >= amount, "Insufficient funds");
-        emit Transfer(msg.sender, receiver, amount, voucher.projectId);
-        balances[msg.sender] -= amount;
-        balances[receiver] += amount;
+        require(balances[msg.sender] >= voucher.amount, "Insufficient funds");
+        emit Transfer(msg.sender, receiver, voucher.amount, voucher.projectId);
+        balances[msg.sender] -= voucher.amount;
+        balances[receiver] += voucher.amount;
     }
 }

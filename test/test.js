@@ -33,7 +33,7 @@ describe("CreaboFund", function () {
     let transaction1 = await CreaboFundContract.deposit({ from: signer.address, value: 5000 });
     // console.log(transaction1);
     // let transaction2 = await atmContract.withdraw(5000, voucher, { from: minter.address });
-    let transaction2 = await CreaboFundContract.transferFund(signers[1].address, 5000, voucher, { from: signer.address });
+    let transaction2 = await CreaboFundContract.transferFund(signers[1].address, voucher, { from: signer.address });
     // console.log(transaction2);
 
     //   // const tx = new EthTx(signature, {chain: 'hardhat', hardfork: 'petersburg'})
